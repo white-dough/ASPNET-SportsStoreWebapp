@@ -45,6 +45,27 @@ namespace Eyac_SportsStore.Models
                         Description = "Give your playing field a professional touch",
                         Category = "Soccer",
                         Price = 34.5m
+                    },
+                    new Product
+                    {
+                        Name = "Yoga Mat",
+                        Description = "Used by professional yoga instructors.",
+                        Category = "Yoga",
+                        Price = 54.5m
+                    },
+                    new Product
+                    {
+                        Name = "Tumbler",
+                        Description = "Drink your water beach",
+                        Category = "General",
+                        Price = 32.5m
+                    },
+                    new Product
+                    {
+                        Name = "Gym Bag",
+                        Description = "Large capacity bag.",
+                        Category = "General",
+                        Price = 54.5m
                     }
 
                 );
