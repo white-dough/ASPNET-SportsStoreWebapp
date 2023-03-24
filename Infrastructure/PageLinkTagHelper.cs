@@ -21,6 +21,9 @@ namespace Eyac_SportsStore.Infrastructure
         public ViewContext? ViewContext { get; set; }
         public PagingInfo? PageModel { get; set; }
         public string? PageAction { get; set; }
+        [HtmlAttributeName(DictionaryAttributePrefix = "page-ur1-")]
+        public Dictionary<string, object> PageUrlValues { get; set; }
+            = new Dictionary<string, object>();
         public bool PageClassesEnabled { get; set; } = false;
         public string PageClass { get; set; } = String.Empty;
         public string PageClassNormal { get; set; } = String.Empty;
@@ -36,6 +39,9 @@ namespace Eyac_SportsStore.Infrastructure
                     TagBuilder tag = new TagBuilder("a");
                     tag.Attributes["href"] = urlHelper.Action(PageAction,
                         new {productPage = i});
+                    PageUrlValues["productPage"] = 1;
+                    tag.Attributes["href"] = urlHelper.Action(PageAction,
+                        PageUrlValues);
                     if (PageClassesEnabled)
                     {
                         tag.AddCssClass(PageClass);
